@@ -167,18 +167,63 @@ body {
     font-size: 36px;
   }
 
-  /* Team */
-  .team {
-    padding: 60px 20px;
+  
+  /* GALLERY */
+/* =========================
+   LUXURY GALLERY
+========================= */
+
+.gallery-swiper{
+  width:100%;
+  padding:50px 0 100px;
+}
+
+.gallery-swiper .swiper-slide{
+  width:450px;
+  height:600px;
+  border-radius:24px;
+  overflow:hidden;
+  transform:scale(.8);
+  transition:all .5s ease;
+  box-shadow:0 30px 80px rgba(0,0,0,.5);
+}
+
+.gallery-swiper .swiper-slide img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.gallery-swiper .swiper-slide-active{
+  transform:scale(1.08);
+}
+
+.gallery-swiper .swiper-slide-prev,
+.gallery-swiper .swiper-slide-next{
+  transform:scale(.9);
+  opacity:.8;
+}
+
+/* Tablet */
+@media (max-width:1024px){
+
+  .gallery-swiper .swiper-slide{
+    width:350px;
+    height:500px;
   }
 
-  .team-grid {
-    grid-template-columns: 1fr;
+}
+
+/* Mobile */
+@media (max-width:768px){
+
+  .gallery-swiper .swiper-slide{
+    width:260px;
+    height:360px;
   }
 
-  .team-img {
-    height: 320px;
-  }
+}
+
 
   /* Booking */
   .booking {
@@ -568,6 +613,16 @@ body {
     .branch-divider { display: none; }
   }
 </style>
+
+
+
+
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+
+
 </head>
 <body>
 
@@ -763,36 +818,50 @@ body {
   </div>
 </section>
 
-<!-- TEAM -->
-<section class="team" id="team">
-  <div class="team-inner">
-    <div class="section-header reveal">
-      <p class="section-tag">Meet the Artists</p>
-      <h2 class="section-title">Master <em>Artisans</em></h2>
-    </div>
-    <div class="team-grid">
-      <div class="team-card reveal">
-        <div class="team-accent"></div>
-        <div class="team-img"><img src="41231d230adfd26ae5b4a3fa43a1c89d.jpg" alt="Artist"></div>
-        <div class="team-info"><p class="team-name">Amara Silva</p><p class="team-role">Creative Director</p></div>
-      </div>
-      <div class="team-card reveal" style="transition-delay:.1s">
-        <div class="team-accent"></div>
-        <div class="team-img"><img src="41e6a85fbb50608a90fd7ccf7c3a59a9.jpg" alt="Artist"></div>
-        <div class="team-info"><p class="team-name">Zara Okafor</p><p class="team-role">Colour Specialist</p></div>
-      </div>
-      <div class="team-card reveal" style="transition-delay:.2s">
-        <div class="team-accent"></div>
-        <div class="team-img"><img src="8a7377f544a6073e3a50a85e5ee8f2dd.jpg" alt="Artist"></div>
-        <div class="team-info"><p class="team-name">Isabelle Reeve</p><p class="team-role">Skin Artist</p></div>
-      </div>
-      <div class="team-card reveal" style="transition-delay:.3s">
-        <div class="team-accent"></div>
-        <div class="team-img"><img src="0468c9f3f4ee6efe49591632a21cbac1.jpg" alt="Artist"></div>
-        <div class="team-info"><p class="team-name">Maya Lindström</p><p class="team-role">Hair Stylist</p></div>
-      </div>
-    </div>
+<!-- GALLERY-->
+<section class="gallery-section">
+
+  <div class="gallery-header">
+    <p class="section-tag">Our Work</p>
+    <h2 class="section-title">
+      Beauty <em>Gallery</em>
+    </h2>
   </div>
+
+  <div class="swiper gallery-swiper">
+
+    <div class="swiper-wrapper">
+
+      <div class="swiper-slide">
+        <img src="e5239525ef901b2e602430acbf220366.jpg">
+      </div>
+
+      <div class="swiper-slide">
+        <img src="e5239525ef901b2e602430acbf220366 copy.jpg">
+      </div>
+
+      <div class="swiper-slide">
+        <img src="d6bd2c0dab7d81cf0a7d80e3847c4f6b.jpg">
+      </div>
+
+      <div class="swiper-slide">
+        <img src="41231d230adfd26ae5b4a3fa43a1c89d.jpg">
+      </div>
+
+      <div class="swiper-slide">
+        <img src="9555e062724cc2ca83f0cb3e6b38c586.jpg">
+      </div>
+
+      <div class="swiper-slide">
+        <img src="8495dcda6d393ddef889de086ace03be.jpg">
+      </div>
+
+    </div>
+
+    <div class="swiper-pagination"></div>
+
+  </div>
+
 </section>
 
 <!-- BOOKING -->
@@ -923,7 +992,7 @@ body {
         <li>
           <a href="#" onclick="return false;">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
-            Mon–Sat: 9am – 8pm
+            Mon–Sat: 10am – 7pm
           </a>
         </li>
       </ul>
@@ -1003,6 +1072,12 @@ function sendToWhatsApp(){
     img.style.transform = `translateY(${rect.top * 0.3}px)`;
   });
 }
+
+/* Gallery */
+
+
+
+  
   const msg=
     `🌹 *New Appointment Request*\n`+
     `*Rose Beauty Parlour*\n\n`+
@@ -1016,6 +1091,40 @@ function sendToWhatsApp(){
     `\n_Sent from rosebeautyyparlour@gmail.com_`;
   window.open(`https://wa.me/919539229843?text=${encodeURIComponent(msg)}`,'_blank');
 }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+
+new Swiper(".gallery-swiper",{
+
+  effect:"coverflow",
+  centeredSlides:true,
+  loop:true,
+  grabCursor:true,
+
+  slidesPerView:"auto",
+
+  autoplay:{
+    delay:2500,
+    disableOnInteraction:false
+  },
+
+  coverflowEffect:{
+    rotate:0,
+    stretch:0,
+    depth:300,
+    modifier:2,
+    scale:0.85,
+    slideShadows:false
+  },
+
+  pagination:{
+    el:".swiper-pagination",
+    clickable:true
+  }
+
+});
 </script>
 </body>
 </html>
