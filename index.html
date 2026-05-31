@@ -837,7 +837,7 @@ body {
     <h2 class="section-title">Our <em>Services</em></h2>
   </div>
   <div class="services-grid">
-    <div class="service-card reveal">
+    <div class="service-card reveal" id="facials">
       <img src="6ddbe33515b770024014f8136541bd88.jpg" alt="Facials">
       <div class="service-overlay"></div>
       <div class="service-content">
@@ -847,7 +847,7 @@ body {
         <a class="service-arrow" href="#">Discover →</a>
       </div>
     </div>
-    <div class="service-card reveal" style="transition-delay:.15s">
+    <div class="service-card reveal" id="threading" style="transition-delay:.15s">
       <img src="7ad6e2dc7d1373804da847f22d3345f4.jpg" alt="Eyebrow Threading">
       <div class="service-overlay"></div>
       <div class="service-content">
@@ -857,7 +857,7 @@ body {
         <a class="service-arrow" href="#">Discover →</a>
       </div>
     </div>
-    <div class="service-card reveal" style="transition-delay:.3s">
+    <div class="service-card reveal" id="hairstyling" style="transition-delay:.3s">
       <img src="e5239525ef901b2e602430acbf220366.jpg" alt="Hair Styling">
       <div class="service-overlay"></div>
       <div class="service-content">
@@ -867,7 +867,7 @@ body {
         <a class="service-arrow" href="#">Discover →</a>
       </div>
     </div>
-    <div class="service-card reveal" style="transition-delay:.1s">
+    <div class="service-card reveal" id="haircut" style="transition-delay:.1s">
       <img src="d6bd2c0dab7d81cf0a7d80e3847c4f6b.jpg" alt="Hair Cut">
       <div class="service-overlay"></div>
       <div class="service-content">
@@ -877,7 +877,7 @@ body {
         <a class="service-arrow" href="#">Discover →</a>
       </div>
     </div>
-    <div class="service-card reveal" style="transition-delay:.25s">
+    <div class="service-card reveal" id="waxing" style="transition-delay:.25s">
       <img src="9555e062724cc2ca83f0cb3e6b38c586.jpg" alt="Waxing">
       <div class="service-overlay"></div>
       <div class="service-content">
@@ -887,7 +887,7 @@ body {
         <a class="service-arrow" href="#">Discover →</a>
       </div>
     </div>
-    <div class="service-card reveal" style="transition-delay:.4s">
+    <div class="service-card reveal" id="mani-pedi" style="transition-delay:.4s">
       <img src="66a108f77f625d0e3c48b586bcef8211.jpg" alt="Pedicure and Manicure">
       <div class="service-overlay"></div>
       <div class="service-content">
@@ -938,7 +938,7 @@ body {
 <section class="gallery-section">
 
   <div class="gallery-header">
-    <p class="section-tag">Our Work Space</p>
+    <p class="section-tag">Our New Work Space</p>
     <h2 class="section-title">
       Parlour <em>Gallery</em>
     </h2>
@@ -1058,14 +1058,14 @@ body {
     </div>
     <div class="footer-col">
       <h4>Services</h4>
-      <ul>
-        <li><a href="#">Facials</a></li>
-        <li><a href="#">Eyebrow Threading</a></li>
-        <li><a href="#">Hair Styling</a></li>
-        <li><a href="#">Hair Cut</a></li>
-        <li><a href="#">Waxing</a></li>
-        <li><a href="#">Pedicure &amp; Manicure</a></li>
-      </ul>
+     <ul>
+  <li><a href="#facials">Facials</a></li>
+  <li><a href="#threading">Eyebrow Threading</a></li>
+  <li><a href="#hairstyling">Hair Styling</a></li>
+  <li><a href="#haircut">Hair Cut</a></li>
+  <li><a href="#waxing">Waxing</a></li>
+  <li><a href="#mani-pedi">Pedicure &amp; Manicure</a></li>
+</ul>
     </div>
     <div class="footer-col">
       <h4>Branches</h4>
@@ -1204,7 +1204,7 @@ function sendToWhatsApp(){
     `📅 *Date:* ${date||'Not specified'}\n`+
     `⏰ *Time:* ${time||'Not specified'}\n`+
     (notes?`📝 *Notes:* ${notes}\n`:'')+
-    `\n_Sent from rosebeautyyparlour@gmail.com_`;
+    `\n`;
   window.open(`https://wa.me/919539229843?text=${encodeURIComponent(msg)}`,'_blank');
 }
 </script>
