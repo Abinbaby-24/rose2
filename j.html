@@ -26,7 +26,26 @@ body {
   width: 100%;
   overflow-x: hidden;
 }
+.hero-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    filter: brightness(0.45);
+}
 
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        ellipse at 60% 50%,
+        rgba(200,54,90,.18) 0%,
+        rgba(26,10,15,.6) 70%
+    );
+    z-index: 1;
+}
 /* Mobile */
 @media (max-width: 768px) {
 
@@ -49,6 +68,14 @@ body {
   }
 
   /* Hero */
+
+  
+
+.hero-content,
+.scroll-hint {
+    position: relative;
+    z-index: 2;
+}
   .hero {
     min-height: 100vh;
   }
@@ -756,7 +783,9 @@ body {
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-bg" id="heroBg"></div>
+ <video class="hero-video" autoplay muted loop playsinline>
+    <source src="Animate_photo_smoke_rotates_spreads_202606011944.mp4" type="video/mp4">
+</video>
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <p class="hero-tag">Rose Beauty Parlour<br>Established on 2010</p>
